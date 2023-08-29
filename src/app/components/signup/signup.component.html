@@ -1,34 +1,34 @@
 <div class="formcontainer">
     <div class=" formtitle midText">Signup</div>
- <form class="">
+ <form (ngSubmit)="signup()">
      <div class="form-control">
          <input type="text" name="user" 
-         id="user" placeholder="Username"/>
+         id="user" [(ngModel)]="username" placeholder="Username"/>
      </div>
      <div class="form-control">
          <input type="password" name="pass" 
-          id="pass" placeholder="Password"/>
+          id="pass" [(ngModel)]="password" placeholder="Password"/>
      </div>
      <div class="form-control">
         <input type="password" name="confirmpass" 
-         id="confirmpass" placeholder="Confirm Password"/>
+         id="confirmpass" [(ngModel)]="confirmpassword" placeholder="Confirm Password"/>
     </div>
     <div class="form-control">
         <input type="text" name="name" 
-         id="name" placeholder="Full Name"/>
+         id="name" [(ngModel)]="name" placeholder="Full Name"/>
     </div>
     <div class="form-control">
         <input type="email" name="email" 
-         id="email" placeholder="Email Address"/>
+         id="email" [(ngModel)]="email" placeholder="Email Address"/>
     </div>
     <div class="form-control">
         <input type="number" name="phone" 
-         id="phonw" placeholder="Phone Number"/>
+         id="phonw" [(ngModel)]="phone" placeholder="Phone Number"/>
     </div>
     <div class="form-control">
         <input type="text" name="address" 
-         id="address" placeholder="Address"/>
+         id="address" [(ngModel)]="address" placeholder="Address"/>
     </div>
-     <button class="loginbtn">Join</button>
+     <button type="submit" class="loginbtn">Join</button>
  </form> 
  </div>

@@ -4,67 +4,94 @@
       "id": 1,
       "name": "Panini",
       "price": 10,
-      "image": "panini.png.jpg"
+      "image": "assets/panini.png.jpg"
     },
     {
       "id": 2,
       "name": "Toast",
       "price": 25,
-      "image": "toast.png.jpg"
+      "image": "assets/toast.png.jpg"
     },
     {
       "id": 3,
       "name": "Paella",
       "price": 40,
-      "image": "paella.png.jpg"
+      "image": "assets/paella.png.jpg"
     },
     {
       "id": 1,
       "name": "Panini",
-      "price": 10,
-      "image": "panini.png.jpg"
+      "price": 20,
+      "image": "assets/panini.png.jpg"
     },
     {
       "id": 2,
       "name": "Toast",
-      "price": 25,
-      "image": "toast.png.jpg"
+      "price": 50,
+      "image": "C:/Users/youst/onlineShop/src/toast.png.jpg"
     },
     {
       "id": 3,
       "name": "Paella",
-      "price": 40,
-      "image": "paella.png.jpg"
+      "price": 80,
+      "image": "C:/Users/youst/onlineShop/src/paella.png.jpg"
     }
   ],
-
-  "users":[
+  "users": [
     {
+      "id": 2,
       "username": "user",
       "role": "user",
       "password": "pass123",
       "name": "Yousty",
       "phone": 1094202482,
       "email": "yousty@gmail.com",
-      "address": "waha city"
+      "address": "waha city",
+      "cart": 1
     },
     {
+      "id": 1,
       "username": "admin",
       "role": "admin",
       "password": "pass123",
       "name": "Youstina",
       "phone": 1094202482,
       "email": "youstina@gmail.com",
-      "address": "waha city"
+      "address": "waha city",
+      "cart": 0
+    },
+    {
+      "username": "bla",
+      "role": "user",
+      "password": "b",
+      "name": "bla",
+      "phone": 1111111111,
+      "email": "youstina2307@outlook.com",
+      "address": "bla",
+      "id": 3
     }
   ],
-
-  "orders":[
+  "orders": [
     {
+      "username": "user",
       "id": 1,
       "date": "23/3/2023",
       "price": 100
     }
+  ],
+  "carts": [
+    {
+      "id": 1,
+      "products": [
+        {
+          "product_id": 1,
+          "quantity": 2
+        },
+        {
+          "product_id": 2,
+          "quantity": 1
+        }
+      ]
+    }
   ]
-
 }

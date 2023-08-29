@@ -1,19 +1,23 @@
 <header class="container">
     <app-button
+    
     text="Login"
     textsize="15px"
     backgroundcolor="cadetblue"
     textcolor="white"
     width="70px"
     height="50px"
+    routerLink="/login"
     ></app-button>
     <app-button
+ 
     text="Signup"
     textsize="15px"
     backgroundcolor="cadetblue"
     textcolor="white"
     width="70px"
     height="50px"
+    routerLink="/signup"
     ></app-button>
     <app-button
     text="Home"
@@ -22,8 +26,10 @@
     textcolor="white"
     width="70px"
     height="50px"
+    routerLink="/home"
     ></app-button>
     <app-button
+
     text="Profile"
     textsize="15px"
     backgroundcolor="cadetblue"
@@ -32,11 +38,20 @@
     height="50px"
     ></app-button>
     <app-button
+    *ngIf="userServiceH.getCurrentUser()!==null"
+    (btnClick)="viewService.headerLogin()"
     text="Logout"
     textsize="15px"
     backgroundcolor="cadetblue"
     textcolor="white"
     width="70px"
     height="50px"
+    (btnClick)="logout()"
     ></app-button>
 </header>
+
+
+
+<!-- 
+*ngIf="userServiceH.getCurrentUser()===null"
+    (btnClick)="viewService.headerLogin()" -->
