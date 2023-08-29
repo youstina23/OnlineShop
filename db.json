@@ -1,0 +1,70 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Panini",
+      "price": 10,
+      "image": "panini.png.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Toast",
+      "price": 25,
+      "image": "toast.png.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Paella",
+      "price": 40,
+      "image": "paella.png.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Panini",
+      "price": 10,
+      "image": "panini.png.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Toast",
+      "price": 25,
+      "image": "toast.png.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Paella",
+      "price": 40,
+      "image": "paella.png.jpg"
+    }
+  ],
+
+  "users":[
+    {
+      "username": "user",
+      "role": "user",
+      "password": "pass123",
+      "name": "Yousty",
+      "phone": 1094202482,
+      "email": "yousty@gmail.com",
+      "address": "waha city"
+    },
+    {
+      "username": "admin",
+      "role": "admin",
+      "password": "pass123",
+      "name": "Youstina",
+      "phone": 1094202482,
+      "email": "youstina@gmail.com",
+      "address": "waha city"
+    }
+  ],
+
+  "orders":[
+    {
+      "id": 1,
+      "date": "23/3/2023",
+      "price": 100
+    }
+  ]
+
+}

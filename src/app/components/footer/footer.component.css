@@ -1,0 +1,29 @@
+.container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 80px;
+    width: calc(100% - 60px); /* Subtracting 30px left and right margin */
+    margin-right: 20px;
+    margin-left: 22px;
+    background-color: transparent;
+    border-radius: 5px; 
+    border: 3px solid cadetblue;
+    width: 1455px;
+}
+.vcontainer{
+    align-items: center;
+    text-align: center;
+    margin: 20px auto;
+    width: 110px;
+    background-color:transparent;
+}
+.extrabtn{
+    margin: 10px;
+    background-color: transparent;
+    color: rgb(40, 92, 94);
+    text-decoration-line: underline;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 17px;
+}

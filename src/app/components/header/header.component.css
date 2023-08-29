@@ -1,0 +1,12 @@
+.container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 80px;
+    width: calc(100% - 60px); /* Subtracting 30px left and right margin */
+    margin: 0 30px;
+    background-color: rgb(232, 243, 244);
+    border-radius: 5px; 
+}
+
+

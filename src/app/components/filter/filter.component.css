@@ -1,0 +1,44 @@
+.filter-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    background-color:  rgb(232, 243, 244);
+    border: 3px solid cadetblue;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    height: 50px;
+  }
+  
+.filter-bar > * {
+    margin: 0 10px; /* Adds horizontal margin between elements in h1 */
+}  
+.filter {
+    display: flex;
+    align-items: center;
+}
+
+
+.filter label {
+    margin: 0px;
+    font-weight: 550;
+}
+  
+  .select {
+    margin: 5px;
+    padding: 6px 10px;
+    font-size: 14px;
+    border: 10px solid rgb(232, 243, 244);
+    border-radius: 10px;
+  }
+  
+  .apply-button {
+    background-color: cadetblue;
+    color: whitesmoke;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
