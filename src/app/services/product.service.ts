@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, catchError, map, of } from 'rxjs';
 import { Product } from '../Product';
 
 const httpOptions = {
@@ -21,4 +21,5 @@ export class ProductService {
   getProducts():  Observable<Product[]>{
     return this.http.get<Product[]>(this.apiUrl);
   }
+
 }

@@ -47,6 +47,7 @@ export class SignupComponent implements OnInit{
                 alert('Please enter a valid phone number, omitting the 0')
               }
               else{
+                const tmp:number[] =[];
                 const elgedid: User = {
                   username: this.username,
                   role: "user",
@@ -54,7 +55,8 @@ export class SignupComponent implements OnInit{
                   name: this.name,
                   phone: this.phone,
                   email: this.email,
-                  address: this.address 
+                  address: this.address ,
+                  cart: tmp
                 }
                 this.userService.addUser(elgedid).subscribe();
                 this.userService.setCurrentUser(elgedid);

@@ -1,3 +1,14 @@
+header {
+  position: fixed;
+  top: 0;
+  z-index: 100; /* Ensure the header is on top */
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  z-index: 100; /* Ensure the footer is on top */
+}
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     justify-content: center;
@@ -13,10 +24,12 @@ body {
 .lightText{
     color:rgb(232, 243, 244);
 }
+
 .shopTitle{
     text-align: center;
-    font-size: 50px;
+    font-size: 40px;
     font-weight: bolder;
+    margin-right: 820px;
 }
 .btn{
     border-color: transparent;
@@ -59,4 +72,33 @@ body {
     font-size: 30px;
     text-align: center;
     margin-bottom: 30px;
+}
+
+.formcontainer{
+  text-align: center;
+  margin: 100px auto;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  box-shadow: 0px 0px 10px  rgb(40, 92, 94);
+  margin-top: 170px;
+  position: absolute;
+  margin-left:580px;
+  overflow: auto;
+}
+.loginbtn{
+  font-size: 18px;
+  transition: ease-in all 0.2s;
+  background-color: cadetblue;
+  color: whitesmoke;
+  padding: 12px;
+  width: 96%;
+  border: cadetblue;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 25px;
+  margin-left: 4px;
 }

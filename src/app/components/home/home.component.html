@@ -1,9 +1,9 @@
 <div class="v1">
     <div class="h1">
-        <app-filter></app-filter>
-        <app-search></app-search>
+        <app-filter (filter)="updateFilteredProducts($event.toString())"></app-filter>
+        <app-search (search)="updateSearchedProducts($event)"></app-search>
     </div>
     <div class="v2">
-        <app-products-list></app-products-list>
+        <app-products-list [products]="products"></app-products-list>
     </div>
 </div>

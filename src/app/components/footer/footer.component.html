@@ -4,6 +4,9 @@
         <div class="extrabtn">Contact us</div>
     </div>
     <app-button
+    *ngIf="getUserService().getCurrentUser()!==null"
+    (btnClick)="getViewService().onLoginChange()"
+    routerLink="/cart"
     text="Cart"
     textsize="15px"
     backgroundcolor="rgb(232, 243, 244)"
@@ -11,12 +14,12 @@
     width="70px"
     height="50px"
     ></app-button>
-    <app-button
+    <!-- <app-button
     text="Add item"
     textsize="15px"
     backgroundcolor="rgb(232, 243, 244)"
     textcolor="rgb(40, 92, 94)"
     width="70px"
     height="50px"
-    ></app-button>
+    ></app-button> -->
 </footer>

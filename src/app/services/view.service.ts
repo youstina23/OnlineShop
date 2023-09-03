@@ -1,26 +1,47 @@
 import { Injectable } from '@angular/core';
 import {Observable, Subject} from 'rxjs';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ViewService {
 
-  private subjectheaderlogin = new Subject<any>();
-  private headerlogin!:boolean;
+  private subjectLoggedIn = new Subject<any>();
+  private loggedIn!:boolean;
 
-  constructor() { 
-    const storedUser = localStorage.getItem('currUser');
-    this.headerlogin = storedUser ? false : true;
+  private subjectForgotPass = new Subject<any>();
+  private forgotPass:boolean = false;
+
+  constructor(private userService: UserService) { 
+    const storedUser = userService.getCurrentUser;
+    if(storedUser===null){
+      this.loggedIn = false;
+    }
+    else{
+      this.loggedIn=true;
+    }   
   }
 
-  headerLogin():void{
-    this.headerlogin = !this.headerlogin;
-    this.subjectheaderlogin.next(this.headerlogin);
+  getForgotPass(): boolean{
+    return this.forgotPass;
   }
 
-  onHeaderLogin():Observable<any>{
-    return this.subjectheaderlogin.asObservable();
+  changeloginStatus():void{
+    this.loggedIn = !this.loggedIn;
+    this.subjectLoggedIn.next(this.loggedIn);
+  }
+  onLoginChange():Observable<any>{
+    return this.subjectLoggedIn.asObservable();
+  }
+
+  changeForgotPassStatus():void{
+    this.forgotPass = !this.forgotPass;
+    this.subjectForgotPass.next(this.forgotPass);
+  }
+  
+  onForgotPassChange():Observable<any>{
+    return this.subjectForgotPass.asObservable();
   }
 
 }

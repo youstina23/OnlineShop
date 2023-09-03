@@ -1,42 +1,43 @@
-<div class="filter-bar darkText">
+<form (ngSubmit)="onFilter()" class="filter-bar darkText">
     <div class="filter">
       <label for="category">Category:</label>
-      <select class="select"id="category">
-        <option value="all">All</option>
-        <option value="tops">Tops</option>
-        <option value="skirts">Skirts</option>
-        <option value="skirts">Pants</option>
-        <option value="skirts">Dresses</option>
-        <option value="skirts">Coverups</option>
+      <select 
+        [(ngModel)]="category" name="category"
+        class="select"id="category">
+        <option value="">All</option>
+        <option value="shirt">Shirts</option>
+        <option value="skirt">Skirts</option>
+        <option value="pants">Pants</option>
+        <option value="dress">Dresses</option>
       </select>
     </div>
     <div class="filter">
-        <label for="material">Material:</label>
-        <select class="select"id="material">
-          <option value="allmaterials">All</option>
-          <option value="linen">Linen</option>
-          <option value="cotton">Cotton</option>
-          <option value="wool">Wool</option>
+        <label for="color">Color:</label>
+        <select 
+          [(ngModel)]="color" name="color"
+          class="select"id="material">
+          <option value="">All</option>
+          <option value="white">White</option>
+          <option value="black">Black</option>
+          <option value="beige">Beige</option>
+          <option value="red">Red</option>
+          <option value="blue">Blue</option>
+          <option value="green">Green</option>
+          <option value="pink">Pink</option>
+          <option value="Yellow">Yellow</option>
         </select>
       </div>
     <div class="filter">
       <label for="price">Price:</label>
-      <select class="select" id="price">
-        <option value="any">Any</option>
+      <select 
+        [(ngModel)]="price" name="price"
+        class="select" id="price">
+        <option value="">Any</option>
         <option value="low">1-20$</option>
         <option value="medium">20-40$</option>
         <option value="high">40-60$</option>
       </select>
     </div>
-    <div class="filter">
-        <label for="sale">Sale:</label>
-        <select class="select" id="sale">
-          <option value="allsales">All</option>
-          <option value="20">up tp 20%</option>
-          <option value="50">up tp 50%</option>
-          <option value="75">up tp 75%</option>
-        </select>
-      </div>
     <button class="apply-button">Apply</button>
-  </div>
+    </form>
   

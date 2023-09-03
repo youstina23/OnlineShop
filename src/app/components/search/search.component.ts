@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter} from '@angular/core';
+import { Product } from 'src/app/Product';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-search',
@@ -7,4 +9,14 @@ import { Component } from '@angular/core';
 })
 export class SearchComponent {
 
+  term: string = '';
+
+  @Output() search: EventEmitter<string> = new EventEmitter<string>();
+
+  onSearch(): void {
+    // console.log(this.term);
+    this.search.emit(this.term);
+  }
+
 }
+

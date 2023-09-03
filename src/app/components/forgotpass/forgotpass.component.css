@@ -1,0 +1,36 @@
+.form-controlf {
+    margin-top: 30px;
+} 
+.form-controlf input {
+    width: 200px;
+    height: 40px;
+    margin: 5px;
+    padding: 3px 5px;
+    font-size: 15px;
+    border-color: rgb(232, 243, 244);
+    border-radius: 5px;
+} 
+.form-controlf-check {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.form-controlf-check input {
+    flex: 2;
+    height: 10px;
+}
+
+.submitbtn{
+    font-size: 15px;
+    font-weight: 600;
+    transition: ease-in all 0.2s;
+    background-color: rgb(232, 243, 244);
+    color: rgb(40, 92, 94);
+    padding: 12px;
+    width: 96%;
+    border: rgb(232, 243, 244);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 4px;
+  }

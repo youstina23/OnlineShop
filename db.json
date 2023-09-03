@@ -2,39 +2,57 @@
   "products": [
     {
       "id": 1,
-      "name": "Panini",
+      "name": "Blue Shirt",
       "price": 10,
-      "image": "assets/panini.png.jpg"
+      "category": "shirt",
+      "color": "blue",
+      "details": "designed by blablable",
+      "image": "assets/paella.jpg"
     },
     {
       "id": 2,
-      "name": "Toast",
-      "price": 25,
-      "image": "assets/toast.png.jpg"
+      "name": "Black Dress",
+      "price": 30,
+      "category": "dress",
+      "color": "black",
+      "details": "designed by blablable",
+      "image": "assets/paella.jpg"
     },
     {
       "id": 3,
-      "name": "Paella",
-      "price": 40,
-      "image": "assets/paella.png.jpg"
-    },
-    {
-      "id": 1,
-      "name": "Panini",
+      "name": "White Pants",
       "price": 20,
-      "image": "assets/panini.png.jpg"
+      "category": "pants",
+      "color": "blue",
+      "details": "designed by blablable",
+      "image": "assets/paella.jpg"
     },
     {
-      "id": 2,
-      "name": "Toast",
+      "id": 4,
+      "name": "Pink Skirt",
+      "price": 20,
+      "category": "skirt",
+      "color": "pink",
+      "details": "designed by blablable",
+      "image": "assets/paella.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Green Dress",
       "price": 50,
-      "image": "C:/Users/youst/onlineShop/src/toast.png.jpg"
+      "category": "dress",
+      "color": "green",
+      "details": "designed by blablable",
+      "image": "assets/paella.jpg"
     },
     {
-      "id": 3,
-      "name": "Paella",
-      "price": 80,
-      "image": "C:/Users/youst/onlineShop/src/paella.png.jpg"
+      "id": 6,
+      "name": "Beige Shirt",
+      "price": 40,
+      "category": "shirt",
+      "color": "beige",
+      "details": "designed by blablable",
+      "image": "assets/paella.jpg"
     }
   ],
   "users": [
@@ -47,7 +65,10 @@
       "phone": 1094202482,
       "email": "yousty@gmail.com",
       "address": "waha city",
-      "cart": 1
+      "cart": [
+        1,
+        2
+      ]
     },
     {
       "id": 1,
@@ -58,7 +79,7 @@
       "phone": 1094202482,
       "email": "youstina@gmail.com",
       "address": "waha city",
-      "cart": 0
+      "cart": []
     },
     {
       "username": "bla",
@@ -68,7 +89,19 @@
       "phone": 1111111111,
       "email": "youstina2307@outlook.com",
       "address": "bla",
-      "id": 3
+      "id": 3,
+      "cart": []
+    },
+    {
+      "username": "blaa",
+      "role": "user",
+      "password": "123",
+      "name": "sarah ehab gamil tawfik",
+      "phone": 1111111111,
+      "email": "youstina.beshay@student.guc.edu.eg",
+      "address": "Waha City",
+      "cart": [],
+      "id": 4
     }
   ],
   "orders": [
@@ -77,21 +110,6 @@
       "id": 1,
       "date": "23/3/2023",
       "price": 100
-    }
-  ],
-  "carts": [
-    {
-      "id": 1,
-      "products": [
-        {
-          "product_id": 1,
-          "quantity": 2
-        },
-        {
-          "product_id": 2,
-          "quantity": 1
-        }
-      ]
     }
   ]
 }

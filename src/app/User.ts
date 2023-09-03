@@ -7,5 +7,5 @@ export interface User{
     phone: number;
     email: string;
     address: string;
-    cart?: number;
+    cart: number[];
 }

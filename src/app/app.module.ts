@@ -16,6 +16,8 @@ import { ProductComponent } from './components/product/product.component';
 import { ProductsListComponent } from './components/products-list/products-list.component';
 
 import {HttpClientModule} from '@angular/common/http';
+import { ForgotpassComponent } from './components/forgotpass/forgotpass.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import {HttpClientModule} from '@angular/common/http';
     SearchComponent,
     ProductComponent,
     ProductsListComponent,
+    ForgotpassComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,

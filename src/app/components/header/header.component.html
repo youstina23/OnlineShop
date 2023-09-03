@@ -1,24 +1,5 @@
 <header class="container">
-    <app-button
-    
-    text="Login"
-    textsize="15px"
-    backgroundcolor="cadetblue"
-    textcolor="white"
-    width="70px"
-    height="50px"
-    routerLink="/login"
-    ></app-button>
-    <app-button
- 
-    text="Signup"
-    textsize="15px"
-    backgroundcolor="cadetblue"
-    textcolor="white"
-    width="70px"
-    height="50px"
-    routerLink="/signup"
-    ></app-button>
+    <h1 class="shopTitle darkText">{{title}}</h1>
     <app-button
     text="Home"
     textsize="15px"
@@ -29,7 +10,30 @@
     routerLink="/home"
     ></app-button>
     <app-button
-
+    *ngIf="getUserService().getCurrentUser()===null"
+    (btnClick)="getViewService().onLoginChange()"
+    text="Login"
+    textsize="15px"
+    backgroundcolor="cadetblue"
+    textcolor="white"
+    width="70px"
+    height="50px"
+    routerLink="/login"
+    ></app-button>
+    <app-button
+    *ngIf="getUserService().getCurrentUser()===null"
+    (btnClick)="getViewService().onLoginChange()"
+    text="Signup"
+    textsize="15px"
+    backgroundcolor="cadetblue"
+    textcolor="white"
+    width="70px"
+    height="50px"
+    routerLink="/signup"
+    ></app-button>
+    <app-button
+    *ngIf="getUserService().getCurrentUser()!==null"
+    (btnClick)="getViewService().onLoginChange()"
     text="Profile"
     textsize="15px"
     backgroundcolor="cadetblue"
@@ -38,8 +42,8 @@
     height="50px"
     ></app-button>
     <app-button
-    *ngIf="userServiceH.getCurrentUser()!==null"
-    (btnClick)="viewService.headerLogin()"
+    *ngIf="getUserService().getCurrentUser()!==null"
+    (btnClick)="getViewService().onLoginChange()"
     text="Logout"
     textsize="15px"
     backgroundcolor="cadetblue"
@@ -50,8 +54,3 @@
     ></app-button>
 </header>
 
-
-
-<!-- 
-*ngIf="userServiceH.getCurrentUser()===null"
-    (btnClick)="viewService.headerLogin()" -->

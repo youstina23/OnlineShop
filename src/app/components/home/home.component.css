@@ -2,11 +2,14 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: calc(100% - 60px); /* Subtracting 30px left and right margin */
-    margin: 0 30px;
     background-color: transparent;
     flex-direction: column;
+    border-radius: 5px; 
+    /* margin-left: 25px;
+    margin-right: 18px; */
+    margin: 0 25px;
 }
+
 
 .v1 > * {
     margin: 20px 0; /* Adds vertical margin between elements in v2 */
@@ -18,10 +21,11 @@
   align-items: center;
   background-color: transparent;
   flex-direction: row;
+  width: calc(100%);
 }
 
 .h1 > * {
-    margin: 0 15px; /* Adds horizontal margin between elements in h1 */
+    margin: 0 10px; /* Adds horizontal margin between elements in h1 */
 }
 
 .v2{
@@ -32,7 +36,9 @@
   border: 3px solid rgb(232, 243, 244);
   border-radius: 5px;
   padding: 20px;
-  width: 1415px;
+  width: calc(100% - 60px); /* Subtracting 30px left and right margin */
+  margin: 0 30px;
+
 }
 
 .v2 > * {

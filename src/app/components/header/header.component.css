@@ -7,6 +7,14 @@
     margin: 0 30px;
     background-color: rgb(232, 243, 244);
     border-radius: 5px; 
+    position: fixed;
+    top: 0;
+}
+.h{
+    display: flex;
+    justify-content: space-between; /* Aligns items at the start and end of the container */
+    align-items: center; /* Vertically centers items */
+    padding: 10px;
 }
 
 

@@ -10,6 +10,9 @@
         id="pass" [(ngModel)]="password" placeholder="Password"/>
     </div>
     <button type="submit" class="loginbtn">Login</button>
-    <div id="forgotpass"class="center-container forgot">Forgot Password?</div>
+    <div id="forgotpass" class="center-container forgot" (click)="openForgotPassForm()">{{ getViewService().getForgotPass()? 'Nevermind I remembered' : 'Forgot Password?' }}</div>
+    <app-forgotpass
+    *ngIf="getViewService().getForgotPass()"
+    ></app-forgotpass>
   </form>
 </div>

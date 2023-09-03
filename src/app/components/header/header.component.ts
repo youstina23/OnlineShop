@@ -11,15 +11,25 @@ import { ViewService } from '../../services/view.service';
 })
 export class HeaderComponent implements OnInit{
 
-  constructor(public userServiceH: UserService, private router: Router, public viewService: ViewService){}
+  title:string = 'ONLINE SHOP';
+
+  constructor(private userService: UserService, private router: Router, private viewService: ViewService){}
  
   ngOnInit(): void {
 
   }
 
+  getUserService(): UserService{
+    return this.userService;
+  }
+
+  getViewService(): ViewService{
+    return this.viewService;
+  }
+
   logout(){
     console.log("boo");
-    this.userServiceH.deleteCurrentUser();
+    this.userService.deleteCurrentUser();
     this.router.navigate(['/login']);
   }
 }
