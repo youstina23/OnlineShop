@@ -1,4 +1,31 @@
-<div class="container">
-    <div class="v1">hi</div>
-    <div class="h1">hi1</div>
+<div class="maincontainer" style="flex-direction: column;">
+    <div  
+    *ngIf="getViewService().isCartEmpty()"
+    class="emptymsg">
+        <h2>Your Cart is Empty :(</h2>
+        <div routerLink="/home">
+            Shop now!
+        </div>
+    </div>  
+    <div 
+    *ngIf="!getViewService().isCartEmpty()"
+    class = "list">
+        <app-cart-item
+        *ngFor="let product of products | async"
+        [product]="product"
+        (deleteItem)="deleteItem(product)"
+        ></app-cart-item>
+    </div>   
+    <div class="h">
+        <label>Total Price: {{ price | currency }}</label>
+        <app-button
+        text="Buy Now"
+        textsize="18px"
+        backgroundcolor="rgb(232, 243, 244)"
+        textcolor="rgb(40, 92, 94)"
+        width="150px"
+        height="50px"
+        (click)="buy()"
+        ></app-button>  
+    </div>
 </div>

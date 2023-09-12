@@ -13,9 +13,16 @@ export class FilterComponent {
 
   @Output() filter: EventEmitter<string> = new EventEmitter<string>();
 
-  onFilter(): void{
+  onFiltering():void{
     const str = this.category+ " "+ this.color+ " " + this.price;
     this.filter.emit(str);
+  }
+  onClearing():void{
+    this.category = '';
+    this.color = '';
+    this.price = '';
+    this.filter.emit("");
+
   }
 
 }

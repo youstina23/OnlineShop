@@ -7,14 +7,20 @@
     margin: 0 30px;
     background-color: rgb(232, 243, 244);
     border-radius: 5px; 
-    position: fixed;
-    top: 0;
 }
 .h{
     display: flex;
     justify-content: space-between; /* Aligns items at the start and end of the container */
     align-items: center; /* Vertically centers items */
     padding: 10px;
+}
+.shoppTitle{
+    text-align: center;
+    font-size: 40px;
+    font-weight: bolder;
+    color:rgb(40, 92, 94);
+    margin-right: 780px;
+    margin-top: 15px;
 }
 
 

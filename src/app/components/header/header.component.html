@@ -1,16 +1,17 @@
 <header class="container">
-    <h1 class="shopTitle darkText">{{title}}</h1>
+    <h1 class="shoppTitle darkText">{{title}}<i class="fa-solid fa-shop" style="color:rgb(40, 92, 94)"></i>
+    </h1>
     <app-button
-    text="Home"
+    text=""
     textsize="15px"
     backgroundcolor="cadetblue"
     textcolor="white"
     width="70px"
     height="50px"
     routerLink="/home"
-    ></app-button>
+    ><i class="fas fa-house fa-lg" style="color:whitesmoke;"></i></app-button>
     <app-button
-    *ngIf="getUserService().getCurrentUser()===null"
+    *ngIf="getUserService().getCurrentUserObj()===null"
     (btnClick)="getViewService().onLoginChange()"
     text="Login"
     textsize="15px"
@@ -21,7 +22,7 @@
     routerLink="/login"
     ></app-button>
     <app-button
-    *ngIf="getUserService().getCurrentUser()===null"
+    *ngIf="getUserService().getCurrentUserObj()===null"
     (btnClick)="getViewService().onLoginChange()"
     text="Signup"
     textsize="15px"
@@ -32,17 +33,18 @@
     routerLink="/signup"
     ></app-button>
     <app-button
-    *ngIf="getUserService().getCurrentUser()!==null"
+    *ngIf="getUserService().getCurrentUserObj()!==null"
     (btnClick)="getViewService().onLoginChange()"
-    text="Profile"
+    text="" 
     textsize="15px"
     backgroundcolor="cadetblue"
     textcolor="white"
     width="70px"
     height="50px"
-    ></app-button>
+    routerLink="/profile"
+    ><i class="fas fa-user fa-lg" style="color:whitesmoke;"></i></app-button>
     <app-button
-    *ngIf="getUserService().getCurrentUser()!==null"
+    *ngIf="getUserService().getCurrentUserObj()!==null"
     (btnClick)="getViewService().onLoginChange()"
     text="Logout"
     textsize="15px"

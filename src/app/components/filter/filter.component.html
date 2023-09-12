@@ -1,4 +1,4 @@
-<form (ngSubmit)="onFilter()" class="filter-bar darkText">
+<form (ngSubmit)="onFiltering()" class="filter-bar darkText">
     <div class="filter">
       <label for="category">Category:</label>
       <select 
@@ -34,10 +34,13 @@
         class="select" id="price">
         <option value="">Any</option>
         <option value="low">1-20$</option>
-        <option value="medium">20-40$</option>
-        <option value="high">40-60$</option>
+        <option value="medium">21-40$</option>
+        <option value="high">41-60$</option>
       </select>
     </div>
-    <button class="apply-button">Apply</button>
+    <button class="apply-button">Apply<i class="fas fa-filter " style="color:whitesmoke; margin-left: 5px;"></i></button>
+    <div id="clear" class="clear"
+    (click)="onClearing()"
+    >Clear</div>
     </form>
   

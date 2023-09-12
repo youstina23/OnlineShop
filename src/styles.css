@@ -1,19 +1,38 @@
-header {
+ header {
   position: fixed;
   top: 0;
   z-index: 100; /* Ensure the header is on top */
+ }  
+button{
+  cursor: pointer;
 }
-
-footer {
+ footer {
   position: fixed;
   bottom: 0;
-  z-index: 100; /* Ensure the footer is on top */
+  z-index: 100; 
+} 
+.maincontainer{
+  background-color: transparent;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 96%;
+  height: 560px;
+  margin-left: 10px;
+  align-items: center;
+  max-height: 560px; /* Set a maximum height */
 }
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     justify-content: center;
     align-items: center;
-  }
+    overflow-x: hidden;
+    overflow-y: auto;
+}
 .darkText{
     color:rgb(40, 92, 94);
    
@@ -29,7 +48,8 @@ body {
     text-align: center;
     font-size: 40px;
     font-weight: bolder;
-    margin-right: 820px;
+    color:rgb(40, 92, 94);
+    margin-right: 780px;
 }
 .btn{
     border-color: transparent;
@@ -76,18 +96,23 @@ body {
 
 .formcontainer{
   text-align: center;
-  margin: 100px auto;
-  width: 300px;
+  width: 380px;
+  height: auto;
+  max-height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px;
   box-shadow: 0px 0px 10px  rgb(40, 92, 94);
-  margin-top: 170px;
-  position: absolute;
-  margin-left:580px;
-  overflow: auto;
+  background-color: white;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-top: 40px;
+}
+.formcontent{
+  max-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .loginbtn{
   font-size: 18px;
@@ -102,3 +127,27 @@ body {
   margin: 25px;
   margin-left: 4px;
 }
+.loginbtn:hover{
+  background-color:   rgb(232, 243, 244)  ;
+  color: rgb(40, 92, 94);
+  font-weight: 600;
+}
+
+
+/* Define scrollbar styles for WebKit-based browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 10px; /* Set the width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: whitesmoke; /* Set the background color of the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background:  rgb(232, 243, 244); /* Set the color of the scrollbar thumb */
+  border-radius: 5px; /* Add rounded corners to the thumb */
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

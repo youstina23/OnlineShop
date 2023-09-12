@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {User} from '../../User';
 import { UserService } from '../../services/user.service';
-
+import {hashPassword} from '../../services/passwords'
 
 @Component({
   selector: 'app-signup',
@@ -20,6 +20,8 @@ export class SignupComponent implements OnInit{
   address: string='';
   emailLang = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   phoneLang = /^1\d{9}$/;
+
+  rounds = 10;
 
   constructor(private router: Router, private userService: UserService){}
   
@@ -47,11 +49,12 @@ export class SignupComponent implements OnInit{
                 alert('Please enter a valid phone number, omitting the 0')
               }
               else{
-                const tmp:number[] =[];
+                const tmp:number[] =[]
+                const hashpass = hashPassword(this.password);
                 const elgedid: User = {
                   username: this.username,
                   role: "user",
-                  password: this.password,
+                  password: hashpass,
                   name: this.name,
                   phone: this.phone,
                   email: this.email,

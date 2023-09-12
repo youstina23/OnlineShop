@@ -1,6 +1,8 @@
-<div class="formcontainer">
-    <div class=" formtitle midText">Signup</div>
- <form (ngSubmit)="signup()">
+<div class="maincontainer">
+ <div class="formcontainer">
+ <div class=" formtitle midText">Signup</div>
+ <div class = "formcontent"> 
+    <form>
      <div class="form-control">
          <input type="text" name="user" 
          id="user" [(ngModel)]="username" placeholder="Username"/>
@@ -29,6 +31,8 @@
         <input type="text" name="address" 
          id="address" [(ngModel)]="address" placeholder="Address"/>
     </div>
-     <button type="submit" class="loginbtn">Join</button>
- </form> 
+    </form> 
  </div>
+ <button type="submit" class="loginbtn" style="margin-left:10px; width:220px" (click)="signup()">Join</button>
+ </div>
+</div>

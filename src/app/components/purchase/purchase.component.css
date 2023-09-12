@@ -1,0 +1,104 @@
+.checkoutform{
+    position: fixed;
+    top: 95px;
+    left: 570px;
+    text-align: center;
+    width: 380px;
+    height: auto;
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 10px  rgb(40, 92, 94);
+    background-color: white;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 5px;
+}
+.checkoutform h1{
+    font-weight: lighter;
+    font-size: 30px;
+    color: rgb(40, 92, 94);
+    margin-top: 5px;
+}
+.price{
+    font-weight: bold;
+    font-size: 20px;
+    color: cadetblue;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.formcontent{
+    align-self: center;
+    align-items: center;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+.paymentt {
+    font-weight: 400;
+    font-size: 17px;
+    color: rgb(40, 92, 94) !important;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px; 
+    margin: 10px;
+}
+.paymentt h4{
+    font-size: 18px;
+    font-weight: 500;
+    color: rgb(40, 92, 94);
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+.x{
+    background-color: transparent;
+    color: grey;
+    cursor: pointer;
+    font-size: 30px;
+    padding-left: 330px;
+}
+.x:hover{
+    color:rgb(89, 15, 15);
+}
+.card{
+    margin-top: 10px;
+    font-size: 20px;
+}
+.cardpic{
+    margin-right: 5px;
+    color: grey;
+}
+.info{
+    font-size: 15px;
+    width: 180px;
+    height: 25px;
+    margin: 5px;
+    padding: 3px 7px;
+    border-color: rgb(232, 243, 244);
+    border-radius: 5px;
+}
+.h{
+    display: flex;
+    flex-direction: row;
+    margin-left: 50px;
+}
+.buy{
+  font-size: 18px;
+  transition: ease-in all 0.2s;
+  background-color: cadetblue;
+  color: whitesmoke;
+  padding: 8px;
+  border: cadetblue;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 25px;
+  font-weight: lighter;
+  width: 200px;
+}
+.buy:hover{
+    background-color: rgb(197, 222, 223)  ;
+  color: rgb(40, 92, 94);
+}
+

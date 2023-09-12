@@ -1,0 +1,74 @@
+<div class="checkoutform">
+  <div class="x" (click)="close()">&times;</div>
+<h1>Checkout</h1>
+<form class="formcontent">
+  <div class="paymentt">
+    <h4>Payment Method:</h4>
+    <div style="align-content: left; flex-direction: column; margin-left: 18px;">
+      <div class="formcontent" style="flex-direction: row; margin-bottom: 10px;">
+        <input type="radio" class="form-check-input" name="test" (click)="bycard(false)" value="cash">
+        <label class="form-check-label" for="flexRadioDefault1">
+        Cash
+        </label>
+      </div>
+      <div class = "formcontent" style="flex-direction: row;">
+        <input type="radio" class="form-check-input" name="test" (click)="bycard(true)" value="card">
+        <label class="form-check-label" for="flexRadioDefault2">
+        Credit Card
+        </label>
+      </div> 
+    </div>
+  </div>
+
+  <div class="card" *ngIf="card">
+    <label class="cardpic" for="creditCard"><i class="fa-regular fa-credit-card"></i> </label>
+    <input 
+    class="info" 
+    maxlength="16"
+    type="text"
+    id="creditCard"
+    name="creditCard"
+    placeholder="Credit Card Number"
+    [(ngModel)]="cardno">
+    <div class="h">
+      <input 
+      class="info"
+      style="width:50px"
+      type="text"
+      id="expirationDate"
+      name="expirationDate"
+      placeholder="MM/YY"
+      maxlength="5"
+      minlength="5"
+      pattern="(0[1-9]|1[0-2])\/[0-9]{2}"
+      [(ngModel)]="cardexp"
+      required>
+      <input 
+      class="info"
+      style="width:50px"
+      type="text"
+      id="cvv"
+      name="cvv"
+      placeholder="CVV"
+      maxlength="3"
+      minlength="3"
+      pattern="[0-9]{3}"
+      [(ngModel)]="cardcvv"
+      required>
+    </div>
+  </div>
+
+  <!-- <div class="price">
+    Total Price: {{ price | currency }}
+  </div>
+ -->
+
+  <div class="price">
+    {{ msg}}
+  </div>
+
+  <button class="buy" (click)="confirmBuy()">Confirm Purchase</button>
+
+</form>
+
+</div>

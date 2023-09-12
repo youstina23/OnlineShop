@@ -1,0 +1,14 @@
+<div [@fadeOut] class="horizontal">
+    <div class="details">
+        <div><img [src]="product.image" alt="Product Image"></div>
+        <label>{{ product.name }}</label>
+        <h6>{{product.details}}</h6>
+        <p>{{ product.price | currency }}</p> 
+    </div>
+    <fa-icon
+     [icon]="faTimes"
+     class="xx"
+     (click)="onDelete(product)"
+    ></fa-icon>
+  </div>
+  

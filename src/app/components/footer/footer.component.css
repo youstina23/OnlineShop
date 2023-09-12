@@ -9,8 +9,6 @@
     border: 3px solid cadetblue;
     margin: 0 30px;
     margin-top: 30px;
-    position: fixed;
-    bottom: 0;
 }
 .vcontainer{
     align-items: center;
@@ -25,6 +23,6 @@
     color: rgb(40, 92, 94);
     text-decoration-line: underline;
     cursor: pointer;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 17px;
 }

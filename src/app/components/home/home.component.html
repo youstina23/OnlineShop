@@ -1,9 +1,19 @@
-<div class="v1">
-    <div class="h1">
+<div class="maincontainer">
+    <div class="v1">
+      <div class="h1">
         <app-filter (filter)="updateFilteredProducts($event.toString())"></app-filter>
         <app-search (search)="updateSearchedProducts($event)"></app-search>
-    </div>
-    <div class="v2">
+      </div>
+      
+      <div  
+      *ngIf="matches===false"
+      class="emptymsg">
+      No product match in the current collection :(
+      </div>  
+
+      <div class="v2">
         <app-products-list [products]="products"></app-products-list>
+      </div>
     </div>
 </div>
+  

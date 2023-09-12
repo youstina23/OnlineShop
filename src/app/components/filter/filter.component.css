@@ -2,23 +2,21 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px;
     background-color:  rgb(232, 243, 244);
     border: 3px solid cadetblue;
     border-radius: 5px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     height: 50px;
-    width:700px;
+    width:800px;
+    margin-left: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
-  
-.filter-bar > * {
-    margin: 0 10px; /* Adds horizontal margin between elements in h1 */
-}  
+
 .filter {
     display: flex;
     align-items: center;
 }
-
 
 .filter label {
     font-weight: 550;
@@ -30,10 +28,12 @@
     font-size: 14px;
     border: 10px solid rgb(232, 243, 244);
     border-radius: 10px;
+    color: rgb(40, 92, 94);
   }
   
   .apply-button {
     background-color: cadetblue;
+    transition: ease-in all 0.2s;
     color: whitesmoke;
     border: none;
     border-radius: 5px;
@@ -41,4 +41,16 @@
     cursor: pointer;
     font-size: 14px;
   }
+  .apply-button:hover{
+    background-color: rgb(40, 92, 94);
+  }
   
+.clear {
+    font-size: 15px;
+    color: grey;
+    text-decoration-line: underline;
+    cursor: pointer;
+}
+.clear:hover {
+    color: rgb(89, 15, 15);
+}

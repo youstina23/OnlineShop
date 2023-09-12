@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, map, Subject, throwError, catchError, of} from 'rxjs';
 import { User } from '../User';
+import * as bcrypt from 'bcryptjs';
+import {comparePasswords} from '../services/passwords';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -14,12 +16,15 @@ const httpOptions = {
 })
 export class UserService{
 
-  private apiUrl = 'http://localhost:5000/users';
+  public apiUrl = 'http://localhost:5000/users';
+
+  rounds = 10;
   
   private currentUser: User | null =null;
   private readonly storeduser = 'currentUser';
 
   constructor(private http: HttpClient) { 
+    this.currentUser=null;
      const stored = sessionStorage.getItem(this.storeduser);
      if(stored){
       this.currentUser= JSON.parse(stored);
@@ -58,7 +63,8 @@ export class UserService{
 
    checkPass(user: User | null, password: string): Observable<boolean>{
     if(user!==null){
-      return of(user.password===password);
+      const match = comparePasswords(password,user.password);
+      return of(match);
     }
     else{
       return of(false);
@@ -75,9 +81,33 @@ export class UserService{
     sessionStorage.setItem(this.storeduser, JSON.stringify(user));
   }
 
-  getCurrentUser(): User | null {
+  getCurrentUser(): Observable<User> {
+    const url = `${this.apiUrl}/${this.currentUser?.id}`;
+    return this.http.get<User>(url);
+  }
+
+  getCurrentUserObj():User|null{
     return this.currentUser;
   }
 
+  updateCurrUserCart(newcart:number[]){
+    if (this.currentUser === null) {
+      this.currentUser = {
+        id: 0, // Assign an appropriate ID if you have it
+        username: "",
+        role: "",
+        password: "",
+        name: "",
+        phone: 0,
+        email: "",
+        address: "",
+        cart: newcart, // Assign the new cart here
+      };
+    } else {
+      this.currentUser.cart = newcart;
+    }
+  }
 
+
+  
 }

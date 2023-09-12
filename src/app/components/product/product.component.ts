@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {Product} from '../../Product';
 import { UserService } from '../../services/user.service';
 import { ViewService } from '../../services/view.service';
@@ -11,6 +11,7 @@ import { ViewService } from '../../services/view.service';
 
 export class ProductComponent implements OnInit{
   @Input() product!: Product;
+  @Output() addItem: EventEmitter<Product> = new EventEmitter();
   
   constructor(private userService: UserService, private viewService: ViewService) {}
 
@@ -23,4 +24,8 @@ export class ProductComponent implements OnInit{
   }
 
   ngOnInit(): void{}
+
+  onAdd(product:Product){
+    this.addItem.emit(product);
+  }
 }

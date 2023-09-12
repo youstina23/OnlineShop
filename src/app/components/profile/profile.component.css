@@ -1,0 +1,21 @@
+.profile p {
+   font-size: 20px;
+}
+.profile h2{
+    font-size: 40px;
+    margin-bottom: 50px;
+    font-weight: lighter;
+    text-align: center;
+}
+.profile{
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px  rgb(40, 92, 94);
+    background-color: white;
+    width: 340px;
+    height: 450px;
+    padding: 10px;
+    padding-left: 40px;
+}
+.profileinfo{
+    text-align: left;
+}

@@ -13,8 +13,11 @@ export class ViewService {
   private subjectForgotPass = new Subject<any>();
   private forgotPass:boolean = false;
 
+  private cartEmpty = true;
+
   constructor(private userService: UserService) { 
-    const storedUser = userService.getCurrentUser;
+    const storedUser = userService.getCurrentUserObj();
+    
     if(storedUser===null){
       this.loggedIn = false;
     }
@@ -42,6 +45,14 @@ export class ViewService {
   
   onForgotPassChange():Observable<any>{
     return this.subjectForgotPass.asObservable();
+  }
+
+  changeCartEmpty(state: boolean):void{
+    this.cartEmpty=state;
+  }
+
+  isCartEmpty():boolean{
+    return this.cartEmpty;
   }
 
 }

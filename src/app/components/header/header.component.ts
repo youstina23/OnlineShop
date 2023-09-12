@@ -11,7 +11,7 @@ import { ViewService } from '../../services/view.service';
 })
 export class HeaderComponent implements OnInit{
 
-  title:string = 'ONLINE SHOP';
+  title:string = 'ONLINE SHOP ';
 
   constructor(private userService: UserService, private router: Router, private viewService: ViewService){}
  

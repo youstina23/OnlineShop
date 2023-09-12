@@ -1,14 +1,7 @@
-.v{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: transparent;
-  flex-direction: column;
-}
-
 .h {
+    padding-top: 30px;
+    padding-bottom: 6px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
-    margin-bottom: 20px; /* Add spacing between horizontal containers */
+    gap: 20px;
   }

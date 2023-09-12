@@ -7,7 +7,7 @@
       <p>{{ product.price | currency }}</p>
       <h4>{{product.details}}</h4>
       <app-button class="btn tocart"
-      *ngIf="getUserService().getCurrentUser()!==null"
+      *ngIf="getUserService().getCurrentUserObj()!==null"
       (btnClick)="getViewService().onLoginChange()"
       text="Add to cart"
       textsize="15px"
@@ -15,7 +15,8 @@
       textcolor="white"
       width="150px"
       height="30px"
-      ></app-button>
+      (click)="onAdd(product)"
+      ><i class="fas fa-cart-shopping " style="color:whitesmoke; margin-left: 10px;"></i></app-button>
     </div>
   </div>
   

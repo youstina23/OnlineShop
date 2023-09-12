@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
 
   products: Product[] = [];
   allproducts: Product[] = [];
+  matches = true;
 
   constructor(private productService: ProductService){}
 
@@ -21,6 +22,7 @@ export class HomeComponent implements OnInit {
     this.productService.getProducts().subscribe((products) => {
       this.allproducts = products;
     });
+    this.matches=true;
   }
 
   updateSearchedProducts(term: string){
@@ -31,6 +33,7 @@ export class HomeComponent implements OnInit {
       this.products = this.products.filter((product) =>
          product.name.toLowerCase().includes(term.toLowerCase())
       );
+      this.matches = this.products.length!==0;
     }
   }
 
@@ -38,10 +41,15 @@ export class HomeComponent implements OnInit {
     this.productService.getProducts().subscribe((products) => {
       this.products = products;
     });
+    this.matches=true;
   }
 
   updateFilteredProducts(filter: string){
-    const filters = filter.split(" ");
+    if(filter===""){
+      this.showAllProducts();
+    }
+    else{
+      const filters = filter.split(" ");
     const category = filters[0];
     const color = filters[1];
     const price = filters[2];
@@ -62,7 +70,10 @@ export class HomeComponent implements OnInit {
       }
       )
     this.products=res;
+    this.matches = this.products.length!==0;
     }
+    }
+    
   }
 
 
