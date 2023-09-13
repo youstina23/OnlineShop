@@ -1,5 +1,5 @@
 import { Component,Input, OnInit } from '@angular/core';
-import { Observable, map } from 'rxjs';
+import { Observable, Subscription, map } from 'rxjs';
 import { Product } from 'src/app/Product';
 import { CartService } from 'src/app/services/cart.service';
 import { UserService } from 'src/app/services/user.service';
@@ -15,6 +15,7 @@ export class CartComponent implements OnInit{
 
   products!: Observable<Product[]>;
   price: number = 0;
+  priceUpdateSubscription!: Subscription;
 
   constructor(private cartService: CartService, private userService: UserService, private viewService:ViewService, private purchaseService: PurchaseService) {
     
@@ -24,8 +25,15 @@ export class CartComponent implements OnInit{
     this.products = this.cartService.getCart();
     this.products.subscribe(productss => {
       this.price = productss.reduce((total, product) => total + product.price, 0);
+      this.purchaseService.setPrice(this.price);
     });
-    sessionStorage.setItem('price',this.price.toString());
+    
+  }
+
+  ngOnDestroy(): void {
+    if (this.priceUpdateSubscription) {
+      this.priceUpdateSubscription.unsubscribe();
+    }
   }
 
   getViewService(): ViewService{
@@ -49,6 +57,7 @@ export class CartComponent implements OnInit{
     }
     this.products.subscribe((productss) => {
       this.price = productss.reduce((total, product) => total + product.price, 0);
+      this.purchaseService.setPrice(this.price);
     });
     this.products = this.cartService.getCart();
   }
@@ -59,17 +68,17 @@ export class CartComponent implements OnInit{
     }
     else{
       this.purchaseService.openPurchaseModal();
-      this.products=this.cartService.getCart();
+      this.subscribePrice();
     }
   }
 
-  clearPrice(){
-    this.products=this.cartService.getCart();
-    this.products.subscribe(() => {
-      this.price = 0;
-    });
-    this.price=0;
+  subscribePrice():number{
+    this.priceUpdateSubscription = this.purchaseService.getPriceUpdateObservable().subscribe(
+      (updatedPrice) => {
+        this.price = updatedPrice;
+      }
+    );
+    return this.price;
   }
-
 
 }

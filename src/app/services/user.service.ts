@@ -93,7 +93,7 @@ export class UserService{
   updateCurrUserCart(newcart:number[]){
     if (this.currentUser === null) {
       this.currentUser = {
-        id: 0, // Assign an appropriate ID if you have it
+        id: 0,
         username: "",
         role: "",
         password: "",
@@ -101,7 +101,7 @@ export class UserService{
         phone: 0,
         email: "",
         address: "",
-        cart: newcart, // Assign the new cart here
+        cart: newcart,
       };
     } else {
       this.currentUser.cart = newcart;

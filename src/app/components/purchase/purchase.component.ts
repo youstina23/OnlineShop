@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MatDialogRef} from '@angular/material/dialog';
 import { CartComponent } from '../cart/cart.component';
 import { CartService } from 'src/app/services/cart.service';
+import { PurchaseService } from 'src/app/services/purchase.service';
 
 @Component({
   selector: 'app-purchase',
@@ -12,19 +13,17 @@ export class PurchaseComponent implements OnInit {
 
   card:boolean | null=null;
   price!:number;
-  msg!:string;
+  msg:string='';
   addedcash:boolean = false;
   cardno!:string | null;
   cardexp!:string | null ;
   cardcvv!:string | null;
 
-  constructor(public dialogRef:MatDialogRef<PurchaseComponent>, private cart:CartComponent, private cartService:CartService){
-    // this.price= this.cart.price;
+  constructor(public dialogRef:MatDialogRef<PurchaseComponent>, public cart:CartComponent, private cartService:CartService, private purchaseService: PurchaseService){
   }
 
   ngOnInit(): void {
-    // console.log(this.cart.price);
-    // this.price= this.cart.price;
+    this.price= this.purchaseService.getPrice();
   }
   
   close():void{
@@ -39,9 +38,9 @@ export class PurchaseComponent implements OnInit {
     if(!this.card){
       alert("Congratulations! Track your order through the email that's been sent");
       this.cartService.buy();
-      this.cart.products=this.cartService.getCart();
-      this.cart.clearPrice();
+      this.purchaseService.setBought(true);
       this.close();
+      this.price=0;
     }
     else{
       if(this.cardno===null || this.cardexp===null || this.cardcvv===null){
@@ -66,12 +65,13 @@ export class PurchaseComponent implements OnInit {
               alert("Congratulations! Track your order through the email that's been sent");
               this.close();
               this.cartService.buy();
-              this.cart.products=this.cartService.getCart();
-              this.cart.clearPrice();
+              this.purchaseService.setBought(true);
+              this.purchaseService.setPrice(0);
               this.cardno=null;
               this.cardcvv=null;
               this.cardexp=null;
               this.card=null;
+              this.price=0;
             }
           }
         }
@@ -89,7 +89,7 @@ export class PurchaseComponent implements OnInit {
       this.addedcash=false;
       
     }
-    this.msg = a?'Free Delivery':'$5.00 Extra Fee';
+    this.msg = a?'Free Delivery':'Delivery Fees Applied';
     this.card=a;
   }
 }

@@ -26,8 +26,8 @@
     font-weight: bold;
     font-size: 20px;
     color: cadetblue;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin-bottom: 5px;
+    margin-top: 10px;
 }
 .formcontent{
     align-self: center;
@@ -100,5 +100,11 @@
 .buy:hover{
     background-color: rgb(197, 222, 223)  ;
   color: rgb(40, 92, 94);
+}
+.msg {
+    font-size: 16px;
+    color: grey;
+    text-decoration: wavy;
+    margin-bottom: 5px;
 }
 

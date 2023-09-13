@@ -77,30 +77,6 @@ export class CartService {
     return userUpdate;
   }
 
-  // buy() {
-  //   const user = this.userService.getCurrentUserObj();
-  //   this.viewService.changeCartEmpty(true);
-  //   this.updatedCart=[];
-  //   if (user) {
-  //     const userUpdate = {
-  //       username: user.username,
-  //       role: 'blabla',
-  //       password: user.password,
-  //       name: user.name,
-  //       phone: user.phone,
-  //       email: user.email,
-  //       address: user.address,
-  //       cart: this.updatedCart,
-  //     };
-  //     this.userService.updateCurrUserCart(user.cart);
-  //     const url = `${this.userService.apiUrl}/${user.id}`;
-  //     return this.http.put<User>(url, userUpdate, httpOptions);
-  //   }
-  //   else{
-  //     return null;
-  //   }
-  // }
-
   buy(){
     const url = `${this.userService.apiUrl}/${this.userService.getCurrentUserObj()?.id}`;
     const userUpdate = this.updateCart(false, 0);
